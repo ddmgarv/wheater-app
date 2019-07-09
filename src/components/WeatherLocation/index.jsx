@@ -16,8 +16,9 @@ import {
 } from "./../../constants/weather";
 
 class WeatherLocation extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    const { city } = props
     this.state = {
       city: "La Plata",
       data: null
@@ -59,5 +60,7 @@ class WeatherLocation extends Component {
     );
   }
 }
-
+WeatherLocation.propTypes = {
+  city: PropTypes.string.isRequired
+}
 export default WeatherLocation;
