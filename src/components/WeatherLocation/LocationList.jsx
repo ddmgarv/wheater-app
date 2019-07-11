@@ -1,7 +1,7 @@
 import React from "react";
 import WeatherLocation from "./index";
 import PropTypes from "prop-types";
-
+import "./style.css";
 const LocationList = ({ cities, onSelectedLocation }) => {
   const handleWeatherLocationClick = city => {
     console.log("Handle WL click");
@@ -16,7 +16,7 @@ const LocationList = ({ cities, onSelectedLocation }) => {
       />
     ));
 
-  return <div>{strToComponents(cities)}</div>;
+  return <div className="locationList">{strToComponents(cities)}</div>;
 };
 
 LocationList.propTypes = {
