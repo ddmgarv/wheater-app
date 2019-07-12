@@ -57,6 +57,11 @@
 .wicon {
   color: rgb(255, 72, 0);
 }
+.forecast-title {
+  text-align: center;
+  color: #fff;
+  padding: 15px 0;
+}
 @media (max-width: 64em) {
   .locationList {
     max-height: 30vh;

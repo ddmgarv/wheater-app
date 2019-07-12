@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
 import { Grid, Col, Row } from "react-flexbox-grid";
 import LocationList from "./components/WeatherLocation/LocationList";
-import ForeCastExtended from "./components/WeatherLocation/ForeCastExtended";
+import ForecastExtended from "./components/ForecastExtended";
 // import "bootstrap/dist/css/bootstrap.css";
 import "./main-style.css";
 const cities = [
@@ -20,7 +20,7 @@ const cities = [
 class App extends Component {
   constructor() {
     super();
-    this.state = { city: "Nueva Ciudad" };
+    this.state = { city: null };
   }
   handleSelectedLocation = city => {
     this.setState({ city });
@@ -28,13 +28,13 @@ class App extends Component {
   render() {
     const { city } = this.state;
     return (
-      <Grid>
+      <Grid className="main-body">
         <Row>
           <Col>
             <AppBar postiion="sticky">
               <Toolbar>
                 <Typography variant="title" color="inherit">
-                  WeatherApp
+                  <h3>WeatherApp</h3>
                 </Typography>
               </Toolbar>
             </AppBar>
@@ -49,9 +49,11 @@ class App extends Component {
           </Col>
           <Col xs={12} md={6}>
             {/* Crea una sombra en el div, el parametro elevation indica la profundida */}
-            <Paper zDepth={4}>
+            <Paper zdepth={5}>
               <div className="details">
-                <ForeCastExtended city={city} />
+                {city && <ForecastExtended city={city} />}
+                {/*se podria refactorizar el mismo codigo usando 
+                && de la siguiente forma city && contenido a renderizar*/}
               </div>
             </Paper>
           </Col>
