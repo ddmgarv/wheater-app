@@ -6,6 +6,7 @@
   box-sizing: border-box;
   padding: 15px;
   box-shadow: 10px 10px 40px -12px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
 }
 .locationCont {
   width: 100%;
@@ -56,6 +57,10 @@
 }
 .wicon {
   color: rgb(255, 72, 0);
+}
+.locationList {
+  max-height: 85vh;
+  overflow: auto;
 }
 .forecast-title {
   text-align: center;
