@@ -5,21 +5,6 @@ import transformForeCast from "./../services/transformForeCast";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import "./WeatherLocation/style.css";
 
-// const days = [
-//   "Lunes",
-//   "Martes",
-//   "Miércoles",
-//   "Jueves",
-//   "Viernes",
-//   "Sábado",
-//   "Domingo"
-// ];
-// const data = {
-//   temperature: 25,
-//   weatherState: "normal",
-//   humidity: 15,
-//   wind: "normal"
-// };
 class ForcastExtended extends Component {
   constructor() {
     super();
@@ -46,8 +31,12 @@ class ForcastExtended extends Component {
   componentDidMount() {
     this.updateCity(this.props.city);
   }
-  componentWillReceiveProps() {}
-
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.city !== this.props.city) {
+      this.setState({ forecastData: null });
+      this.updateCity(nextProps.city);
+    }
+  }
   updateCity = city => {
     const url_forecast = `${this.state.url_base_weather}?q=${city}&appid=${
       this.state.api_key

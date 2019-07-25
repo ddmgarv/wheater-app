@@ -4,10 +4,11 @@ import AppBar from "@material-ui/core/AppBar";
 import Typography from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
 import { Grid, Col, Row } from "react-flexbox-grid";
-import LocationList from "./components/WeatherLocation/LocationList";
 import ForecastExtended from "./components/ForecastExtended";
-// import "bootstrap/dist/css/bootstrap.css";
+import LocationListContainer from "./containers/LocationListContainer";
+import "bootstrap/dist/css/bootstrap.css";
 import "./main-style.css";
+
 const cities = [
   "Buenos Aires,ar",
   "Bogota,col",
@@ -22,9 +23,7 @@ class App extends Component {
     super();
     this.state = { city: null };
   }
-  handleSelectedLocation = city => {
-    this.setState({ city });
-  };
+
   render() {
     const { city } = this.state;
     return (
@@ -42,10 +41,7 @@ class App extends Component {
         </Row>
         <Row>
           <Col xs={12} md={6}>
-            <LocationList
-              cities={cities}
-              onSelectedLocation={this.handleSelectedLocation}
-            />
+            <LocationListContainer cities={cities} />
           </Col>
           <Col xs={12} md={6}>
             {/* Crea una sombra en el div, el parametro elevation indica la profundida */}
