@@ -8,6 +8,7 @@ import ForecastExtended from "./components/ForecastExtended";
 import LocationListContainer from "./containers/LocationListContainer";
 import "bootstrap/dist/css/bootstrap.css";
 import "./main-style.css";
+import { createStore } from "redux";
 
 const cities = [
   "Buenos Aires,ar",
@@ -30,7 +31,7 @@ class App extends Component {
       <Grid className="main-body">
         <Row>
           <Col>
-            <AppBar postiion="sticky">
+            <AppBar position="sticky">
               <Toolbar>
                 <Typography variant="title" color="inherit">
                   <h3>WeatherApp</h3>
