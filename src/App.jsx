@@ -8,7 +8,6 @@ import ForecastExtended from "./components/ForecastExtended";
 import LocationListContainer from "./containers/LocationListContainer";
 import "bootstrap/dist/css/bootstrap.css";
 import "./main-style.css";
-import { createStore } from "redux";
 
 const cities = [
   "Buenos Aires,ar",
