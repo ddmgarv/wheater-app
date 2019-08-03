@@ -9,8 +9,6 @@ class ForcastExtended extends Component {
   constructor() {
     super();
     this.state = {
-      url_base_weather: "http://api.openweathermap.org/data/2.5/forecast",
-      api_key: "a099183b807b408a8de93c2e3ccc81b1",
       forecastData: null
     };
   }
@@ -37,20 +35,7 @@ class ForcastExtended extends Component {
       this.updateCity(nextProps.city);
     }
   }
-  updateCity = city => {
-    const url_forecast = `${this.state.url_base_weather}?q=${city}&appid=${
-      this.state.api_key
-    }`;
-    fetch(url_forecast)
-      .then(data => {
-        return data.json();
-      })
-      .then(weather_data => {
-        const forecastData = transformForeCast(weather_data);
-        this.setState({ forecastData });
-      })
-      .catch(error => console.log(error));
-  };
+  updateCity = city => {};
   render() {
     const { city } = this.props;
     const { forecastData } = this.state;
