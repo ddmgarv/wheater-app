@@ -1,4 +1,5 @@
 import transformForecast from "./../services/transformForeCast";
+export const SET_FORECAST_DATA = "SET_FORECAST_DATA";
 export const SET_CITY = "SET_CITY";
 
 export const setCity = payload => ({ type: SET_CITY, payload });
