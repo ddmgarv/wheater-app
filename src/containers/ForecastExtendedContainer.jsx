@@ -20,6 +20,7 @@ const mapStateToProps = state => ({
   city: getCity(state),
   forecastData: getForecastDataFromCities(state)
 });
+
 export default connect(
   mapStateToProps,
   null

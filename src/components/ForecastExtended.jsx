@@ -20,7 +20,7 @@ const renderProgress = () => {
 const ForcastExtended = ({ city, forecastData }) => (
   <div>
     <h3 className="forecast-title">Pronóstico extendido Para: {city}</h3>
-    {forecastData ? renderForeCastItemDays(forecastData) : renderProgress()}
+    {forecastData ? renderForecastItemDays(forecastData) : renderProgress()}
   </div>
 );
 
