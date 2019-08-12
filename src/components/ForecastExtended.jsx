@@ -4,16 +4,17 @@ import ForecastItem from "./ForeCastItem";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import "./WeatherLocation/style.css";
 
-const renderForecastItemDays = forecastData => {
-  return forecastData.map(forecast => (
-    <ForecastItem
-      key={`${forecast.weekDay}${forecast.hour}`}
-      weekDay={forecast.weekDay}
-      hour={forecast.hour}
-      data={forecast.data}
-    />
-  ));
-};
+const renderForecastItemDays = forecastData =>
+  forecastData.map(forecast => {
+    return (
+      <ForecastItem
+        key={`${forecast.weekDay}${forecast.hour}`}
+        weekDay={forecast.weekDay}
+        hour={forecast.hour}
+        data={forecast.data}
+      />
+    );
+  });
 const renderProgress = () => {
   return <CircularProgress />;
 };

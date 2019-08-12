@@ -1,4 +1,8 @@
-import { SET_FORECAST_DATA } from "./../actions";
+import {
+  SET_FORECAST_DATA,
+  GET_WEATHER_CITY,
+  SET_WEATHER_CITY
+} from "./../actions";
 import { createSelector } from "reselect";
 
 export const cities = (state = {}, action) => {
@@ -9,6 +13,14 @@ export const cities = (state = {}, action) => {
         ...state,
         [city]: { forecastData, weather: null }
       };
+    case GET_WEATHER_CITY: {
+      const city = action.payload;
+      return { ...state, [city]: { weather: null } };
+    }
+    case SET_WEATHER_CITY: {
+      const { city, weather } = action.payload;
+      return { ...state, [city]: { weather } };
+    }
     default:
       return state;
   }
